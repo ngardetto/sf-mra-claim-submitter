@@ -38,6 +38,23 @@ Locate the receipt files (ask the user where they are if unclear). For each file
 
 Build a simple table of every receipt: filename → vendor → date → amount → proposed category. Note explicitly, for your own benefit and the user's, anywhere you had to guess at a date, pick a vendor on an ambiguous receipt, or fall back to a category that doesn't quite match. Genuinely stuck cases (illegible receipt, can't tell what was purchased, can't match to a vendor) should be skipped, not guessed — call them out instead of papering over them.
 
+Once data is extracted and any ambiguities are resolved (after step 2), rename each source file before upload using this format:
+
+```
+{M}.{DD}.{YYYY}_{Vendor} {Brief Description}_{$Amount}{.ext}
+```
+
+For example: `8.22.2025_Amazon Nasal Spray_$6.97.jpg` or `11.11.2025_CVS Pharmacy Rx Copay_$14.98.jpg`
+
+A few notes on the renaming:
+- Month has no leading zero (8, not 08); day and year are as-is from the date of service.
+- The description should be short but specific enough to identify the item at a glance — "Rx Copay" or "Eye Exam" or "OTC Allergy Meds" rather than just "prescription" or "purchase."
+- Keep the original file extension.
+- Strip or replace any characters that aren't filename-safe (slashes, colons, etc.).
+- Rename in place (same folder) so the upload step can reference the updated paths.
+
+This renaming happens after step 2's approval but before the browser session opens, so the descriptive names also appear in the WageWorks portal's file list (making it easier to match uploads to line items later).
+
 ## Step 2: One combined check-in, before opening the browser
 
 Show the user the full table and ask once: "Here's what I found across N receipts, total $X. A few things to flag: [list]. Anything to correct before I start entering these?"
