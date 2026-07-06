@@ -12,8 +12,10 @@ It reads your receipt photos, flags anything uncertain upfront, enters each clai
 
 ## Install
 
-1. Download **`sf-mra-claim-submitter.skill`** from this repo.
-2. In Claude, open **Settings → Capabilities → Skills** and upload the file.
+1. Click the green **Code** button on this page → **Download ZIP**.
+2. In Claude, open **Customize → Skills** and upload the downloaded zip file.
+
+Alternatively, click `sf-mra-claim-submitter.skill` in the file list above and use the download icon (top-right of the file preview) to download just the skill file and upload that instead.
 
 ## Use
 
